@@ -1,8 +1,13 @@
 #pragma once
+#include "JoueurIA.h"
 class Jeu
 {
 public:
-   Jeu();
+   Jeu(JoueurIA * un, JoueurIA * deux);
    ~Jeu();
+
+private:
+   JoueurIA * Un_;
+   JoueurIA * Deux_;
 };
 

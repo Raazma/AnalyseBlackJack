@@ -1,7 +1,7 @@
 #include "JeuCarte.h"
 #include <algorithm>  
-#include <ctime>        // std::time
-#include <cstdlib>      // std::rand, std::srand
+#include <ctime>        
+#include <cstdlib>     
 
 
 JeuCarte::JeuCarte()
@@ -52,20 +52,31 @@ void JeuCarte::Reinitialiser()
 Carte JeuCarte::PigerCarte()
 {
    srand(time(NULL));
+   Melanger();
 
    int valeur;
    while ((valeur = Paquet_.at(rand() % 52).piger()))
-
+     
       return Paquet_.at(valeur);
 }
 
 int JeuCarte::nbCartesSorte(int valeur)
 {
    int i = 0;
-
    for (size_t i = 0; i < Paquet_.size(); i++)
    {
       if (Paquet_.at(i).piger())
+         i++;
+   }
+   return i;
+}
+
+int JeuCarte::NbCartePasPiger()
+{
+   int i = 0;
+   for (size_t i = 0; i < Paquet_.size(); i++)
+   {
+      if (!Paquet_.at(i).piger())
          i++;
    }
    return i;

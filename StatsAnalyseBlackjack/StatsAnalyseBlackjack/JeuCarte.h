@@ -12,7 +12,7 @@ public:
    void Reinitialiser();
    void Melanger();
    int nbCartesSorte(int valeur);
-
+   int NbCartePasPiger();
 private:
    vector<Carte> Paquet_;
 
