@@ -9,8 +9,9 @@ public:
    int getCompte();
    void SetCompte(int valeur);
    bool Jouer();
+   bool Depasser();
+   void AjouterCarte(Carte carte);
    ~JoueurIA();
-
 
 private:
    int Risque_;
